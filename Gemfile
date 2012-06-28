@@ -7,6 +7,7 @@ gem 'rails', '3.1.6'
 
 gem 'sqlite3'
 
+gem 'russian', '~> 0.6.0'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -41,6 +42,7 @@ group :test do
   # Pretty printed test output
   gem 'rspec-rails', '2.6.1'
   gem 'webrat', '0.7.1'
+  gem 'spork'
   
   gem 'turn', '~> 0.8.3', :require => false
 end
