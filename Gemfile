@@ -9,6 +9,7 @@ gem 'sqlite3'
 
 gem 'russian', '~> 0.6.0'
 
+gem 'gravatar_image_tag'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -49,6 +50,7 @@ group :test do
   gem 'autotest-rails-pure'
   gem 'autotest-fsevent'
   gem 'autotest-growl'
-
+  gem 'factory_girl_rails', '1.0'
+  
   gem 'turn', '~> 0.8.3', :require => false
 end
