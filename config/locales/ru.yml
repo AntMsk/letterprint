@@ -1,0 +1,11 @@
+ru:
+  hello:           "Привет, мир"
+  home:            "Письма" 
+  users:           "Пользователи"
+  profile:         "Профиль"
+  settings:        "Настройки"     
+  help:            "Помощь"     
+  signout:          "Выйти"
+  signin:           "Войти"
+  
+

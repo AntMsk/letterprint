@@ -1,0 +1,48 @@
+<div class="noprint">
+<h1>Просмотр заказов</h1>
+
+<table>
+  <tr>
+    <th>Индекс</th>
+    <th>Адрес</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @letters.each do |letter| %>
+
+  <tr>
+    <td><%= letter.index %></td>
+    <td><%= letter.adress %></td>
+    <td><%= letter.created_at %></td>
+    <td><%= link_to 'Show', letter %></td>
+    <td><%= link_to 'Edit', edit_letter_path(letter) %></td>
+    <td><%= link_to 'Destroy', letter, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+
+<% end %>
+</table>
+</div>  
+<div class="print">
+	
+<% @letters.each_with_index do |letter , ind| %>
+<div class='letter'>
+	<div class='zip'>
+		<%= letter.index %>
+	</div>
+	<div class='adress'>
+		<%= letter.adress %>	
+	</div>	
+</div>
+<% if (ind % 2 )== 1 %>
+<div class='endpage'>
+</div>	
+<% end %>
+
+<% end %>
+
+</div>
+<br />
+
+<%= link_to 'Новый заказ', new_letter_path %>

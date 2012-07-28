@@ -1,9 +1,14 @@
+@font-face {
+    font-family: zip; /* Имя шрифта */
+    src: url('http://localhost:3000/zipcode.ttf'); /* Путь к файлу со шрифтом */
+   }
+   
 .container {
   width: 710px;
 }
 
 body {
-  background: #cff;
+  background: #ccc;
 }
 
 header {
@@ -182,4 +187,12 @@ ul.users {
 
 .users li {
   list-style: none;
+}
+.print
+{
+	display:none;
+}
+.zip
+{
+    font-family: zip;
 }

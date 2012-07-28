@@ -1,0 +1,29 @@
+<%= form_for(@letter) do |f| %>
+  <% if @letter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@letter.errors.count, "error") %> prohibited this letter from being saved:</h2>
+
+      <ul>
+      <% @letter.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :index, "Индекс" %><br />
+    <%= f.text_field :index %>
+  </div>
+  <div class="field">
+    <%= f.label :adress, "Адрес"%><br />
+    <%= f.text_field :adress %>
+  </div>
+  <div class="field">
+    <%= f.label :bukl, "Дополнительно" %><br />
+    <%= f.text_field :bukl %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

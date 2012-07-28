@@ -15,5 +15,8 @@ class PagesController < ApplicationController
     @title="Help"
   end
   
+  def letters
+    @title="Letters"
+  end
 
 end
