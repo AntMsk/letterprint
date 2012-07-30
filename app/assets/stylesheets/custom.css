@@ -1,6 +1,6 @@
 @font-face {
     font-family: zip; /* Имя шрифта */
-    src: url('http://localhost:3000/zipcode.ttf'); /* Путь к файлу со шрифтом */
+    src: url('http://dilectory.com/zipcode.ttf'); /* Путь к файлу со шрифтом */
    }
    
 .container {
