@@ -13,7 +13,7 @@
 <% @letters.each do |letter| %>
 
   <tr>
-    <td><%= letter.index %></td>
+    <td class='zip'><%= letter.index %></td>
     <td><%= letter.adress %></td>
     <td><%= letter.created_at %></td>
     <td><%= link_to 'Show', letter %></td>
@@ -28,6 +28,8 @@
 	
 <% @letters.each_with_index do |letter , ind| %>
 <div class='letter'>
+	<img src='/images/letter.png' class='letterimg'>
+	
 	<div class='zip'>
 		<%= letter.index %>
 	</div>

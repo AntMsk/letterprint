@@ -36,7 +36,7 @@ a:link:after, a:visited:after {content:" (" attr(href) ")";font-size:90%;}
 
 @font-face {
     font-family: zip; /* Имя шрифта */
-    src: url('http://dilectory.com/zipcode.ttf'); /* Путь к файлу со шрифтом */
+    src: url('/fonts/zipcode.ttf'); /* Путь к файлу со шрифтом */
    }
 header, footer, a , h1, .noprint
 {
@@ -44,26 +44,42 @@ header, footer, a , h1, .noprint
 }
 .letter
 {
+/* C5	162 × 229 мм	A5 */
 	position: relative;
-	height: 270pt;
-	margin-top:15px;
-	border: 1px double black;
+	height: 16.2cm;
+	width : 22.9cm;
+	margin-top:0px;
+	border: 0px double black;
+	
+}
+.letterimg
+{
+	/* C5	162 × 229 мм	A5 */
+	position: absolute;
+	height: 16.2cm;
+	width : 22.9cm;
+	z-index:-50;
+	opacity:0.999;
+	
 }
 .zip
 {
 	position: absolute;
-	top: 200pt;
-	left:15px;
+	top: 13.7cm;
+	left:1.85cm;
     font-family: zip;
-    font-size:36pt;
+    font-size:1.7cm;
+    z-index: 10;
+    letter-spacing:0.06cm;
 }
 .adress
 {
 	position: absolute;
-	top:200pt;
-	left: 220pt;
-	width: 150pt;
-	height: 72pt;
+	top: 10.0cm;
+	left: 12cm;
+	width: 10cm;
+	height: 4cm;
+	font-size: 0.6cm;
 }
 .endpage
 {

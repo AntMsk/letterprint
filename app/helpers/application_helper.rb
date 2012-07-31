@@ -13,5 +13,9 @@ module ApplicationHelper
     image_tag("logo.png", :alt => "Letter print", :class => "round")
   end
   
+  def letter
+    image_tag("letter.png", :alt => "BROKEN FILE", :class => "round")
+  end
+  
   
 end
