@@ -1,22 +1,53 @@
 <div class="noprint">
 <h1>Просмотр заказов</h1>
-
 <table>
   <tr>
-    <th>Индекс</th>
+    <th class="zip">Индекс</th>
     <th>Адрес</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
+<% if params[:status] == "new"%> 
+<% flash.now[:notice] = 'только новые' %>
+<% filter='new' %>
+<% end%>
+
+<% if params[:status] == "last"%> 
+<% flash.now[:notice] = 'предыдущие' %>
+<% filter='last' %>
+
+<% end %>
+
+<% if params[:status] == "print"%> 
+<% flash.now[:notice] = 'сохранено!' %>
+<% filter='new' %>
+<% Letter.printing %>
+
+<% end%>
 
 <% @letters.each do |letter| %>
+<% if(filter=='new') %>
+   <% if(letter.printed!=-1) %>
+       <% next %>
+   <% end %>
+<% end %>
 
+<% if(filter=='last') %>
+   <% if(letter.printed!=0) %>
+       <% next %>
+   <% end %>
+<% end %>
+
+<% if letter.alien? %>
+  <tr class='alien'>
+<% else %>	
   <tr>
-    <td class='zip'><%= letter.index %></td>
+<% end %>
+    <td><%= letter.index %></td>
     <td><%= letter.adress %></td>
     <td><%= letter.created_at %></td>
-    <td><%= link_to 'Show', letter %></td>
+    <!-- <td><%= link_to 'Show', letter %></td> -->
     <td><%= link_to 'Edit', edit_letter_path(letter) %></td>
     <td><%= link_to 'Destroy', letter, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
@@ -27,17 +58,39 @@
 <div class="print">
 	
 <% @letters.each_with_index do |letter , ind| %>
-<div class='letter'>
-	<img src='/images/letter.png' class='letterimg'>
+
+<% if(filter=='new') %>
+   <% if(letter.printed!=-1) %>
+       <% next %>
+   <% end %>
+<% end %>
+
+<% if(filter=='last') %>
+   <% if(letter.printed!=0) %>
+       <% next %>
+   <% end %>
+<% end %>
+
+
+    <div class='letter'>
+	<% if letter.alien? %>
+	   <img src='/images/letteralien.png' class='letterimg'>
+	<% else %>
+	   <img src='/images/letter.png' class='letterimg'>
+	<% end %>
 	
-	<div class='zip'>
+	<% if letter.alien? %>
+	   <div class='zipalien'>
+	<% else %>
+	   <div class='zip'>
+	<% end %>		
 		<%= letter.index %>
 	</div>
 	<div class='adress'>
 		<%= letter.adress %>	
 	</div>	
 </div>
-<% if (ind % 2 )== 1 %>
+<% if (ind % 1 )== 0 %>
 <div class='endpage'>
 </div>	
 <% end %>
@@ -47,4 +100,9 @@
 </div>
 <br />
 
-<%= link_to 'Новый заказ', new_letter_path %>
+<%= link_to 'Заказ вручную', new_letter_path, :class => "visible"  %>
+<%= link_to "Подготовить новые", letters_path({:status=>'new'}), :class => "visible"  %>
+<%= link_to "Подготовить предыдущие", letters_path({:status=>'last'}), :class => "visible"  %>
+<%= link_to_function("Печать страницы", "javascript:print()")%>
+<%= link_to "Сохранить все новые", letters_path({:status=>'print'}), :class => "visible"  %>
+

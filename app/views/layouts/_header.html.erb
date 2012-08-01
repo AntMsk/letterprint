@@ -1,22 +1,29 @@
 <header>
-  <%= link_to logo, root_path %>
+  <%= link_to logo, root_path, :class => "visible"  %>
+
   <nav class="round">
     <ul>
-      
+  
+  
       <% if signed_in? %>
-      <li><%= link_to t(:users), users_path %></li>
-      <li><%= link_to t(:profile), current_user %></li>
-      <li><%= link_to t(:settings), edit_user_path(current_user) %></li>
+      <li><%= link_to t(:users), users_path, :class => "visible" %></li>
+      <li><%= link_to t(:profile), current_user, :class => "visible" %></li>
+      <li><%= link_to t(:settings), edit_user_path(current_user), :class => "visible" %></li>
       <% end %>
-      <li><%= link_to t(:help), help_path %></li>
+      <li><%= link_to t(:help), help_path, :class => "visible"  %></li>
       <% if signed_in? %>
-      <li><%= link_to t(:signout), signout_path, :method => :delete %></li>
+      <li><%= link_to t(:signout), signout_path, :method => :delete, :class => "visible"  %></li>
       <% else %>
-      <li><%= link_to t(:signin), signin_path %></li>
+      <li><%= link_to t(:signin), signin_path, :class => "visible"  %></li>
       <% end %>
     </ul>
+    
     <ul>
-    	<li><%= link_to t(:home), letters_path %></li>
+    	<li><%= link_to t(:home), letters_path, :class => "visible"  %></li>
     </ul>
+    
   </nav>
+  <div id="coundletter">
+  	Сегодня заказов: <%= Letter.today %> 
+  </div>
 </header>

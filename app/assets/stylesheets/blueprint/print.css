@@ -38,7 +38,7 @@ a:link:after, a:visited:after {content:" (" attr(href) ")";font-size:90%;}
     font-family: zip; /* Имя шрифта */
     src: url('/fonts/zipcode.ttf'); /* Путь к файлу со шрифтом */
    }
-header, footer, a , h1, .noprint
+header, footer, a , h1, .noprint, .flash 
 {
 	display: none;
 }
@@ -68,6 +68,16 @@ header, footer, a , h1, .noprint
 	top: 13.7cm;
 	left:1.85cm;
     font-family: zip;
+    font-size:1.7cm;
+    z-index: 10;
+    letter-spacing:0.06cm;
+}
+.zipalien
+{
+	position: absolute;
+	top: 13.7cm;
+	left:1.85cm;
+    
     font-size:1.7cm;
     z-index: 10;
     letter-spacing:0.06cm;

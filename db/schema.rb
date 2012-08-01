@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120727025340) do
+ActiveRecord::Schema.define(:version => 20120801173730) do
 
   create_table "letters", :force => true do |t|
     t.string   "index"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(:version => 20120727025340) do
     t.string   "bukl"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "printed",    :default => -1
+    t.boolean  "alien",      :default => false
   end
 
   create_table "users", :force => true do |t|
