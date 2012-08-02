@@ -1,8 +1,15 @@
 class LettersController < ApplicationController
   # GET /letters
   # GET /letters.json
+  def search
+    
+  end
+  
   def index
     @letters = Letter.all
+    if params[:adress]
+       @letters = Letter.where(:adress =>params[:adress])
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -17,7 +24,7 @@ class LettersController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @letter }
+      format.json { render json: @letter.find_by_index(params[:index]) }
     end
   end
 
@@ -46,6 +53,7 @@ class LettersController < ApplicationController
       if @letter.save
         format.html { redirect_to @letter, notice: 'Letter was successfully created.' }
         format.json { render json: @letter, status: :created, location: @letter }
+       
       else
         format.html { render action: "new" }
         format.json { render json: @letter.errors, status: :unprocessable_entity }
