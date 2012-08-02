@@ -20,7 +20,7 @@
 <% end %>
 
 <% if params[:status] == "print"%> 
-<% flash.now[:notice] = 'сохранено!' %>
+<% flash.now[:notice] = 'сохранено! Не забудьте распечатать!' %>
 <% filter='new' %>
 <% Letter.printing %>
 

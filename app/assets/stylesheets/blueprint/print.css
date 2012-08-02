@@ -29,15 +29,30 @@ blockquote {margin:1.5em;padding:1em;font-style:italic;font-size:.9em;}
 a:link, a:visited {background:transparent;font-weight:700;text-decoration:underline;}
 a:link:after, a:visited:after {content:" (" attr(href) ")";font-size:90%;}
 */
-
-  @page:left {margin-left:0cm; margin-right:0cm;}
-  @page:right {margin-left:0cm; margin-right:0cm;}
-
-
-@font-face {
+ @font-face {
     font-family: zip; /* Имя шрифта */
     src: url('/fonts/zipcode.ttf'); /* Путь к файлу со шрифтом */
    }
+   
+.zip
+{
+	position: absolute;
+	top: 13.7cm;
+	left:1.85cm;
+    font-family: zip;
+    font-size:1.7cm;
+    
+    letter-spacing:0.06cm;
+}
+
+  @page:left {margin-left:0cm; margin-right:0cm;}
+  @page:right {margin-left:0cm; margin-right:0cm;}
+  /*@page:top {margin-top:0cm; margin-bottom:0cm;}
+  @page:bottom {margin-top:0cm; margin-bottom:0cm;}
+  */
+
+
+
 header, footer, a , h1, .noprint, .flash 
 {
 	display: none;
@@ -61,16 +76,6 @@ header, footer, a , h1, .noprint, .flash
 	z-index:-50;
 	opacity:0.999;
 	
-}
-.zip
-{
-	position: absolute;
-	top: 13.7cm;
-	left:1.85cm;
-    font-family: zip;
-    font-size:1.7cm;
-    z-index: 10;
-    letter-spacing:0.06cm;
 }
 .zipalien
 {
