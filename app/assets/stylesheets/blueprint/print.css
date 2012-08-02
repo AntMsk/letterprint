@@ -30,8 +30,8 @@ a:link, a:visited {background:transparent;font-weight:700;text-decoration:underl
 a:link:after, a:visited:after {content:" (" attr(href) ")";font-size:90%;}
 */
 
-  @page:left {margin-left:1cm; margin-right:1cm;}
-  @page:right {margin-left:1cm; margin-right:1cm;}
+  @page:left {margin-left:0cm; margin-right:0cm;}
+  @page:right {margin-left:0cm; margin-right:0cm;}
 
 
 @font-face {
