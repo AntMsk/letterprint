@@ -18,7 +18,8 @@
       <% end %>
     </ul>
     
-    <ul>
+    <ul>    	
+    	<li><%= link_to "Новые письма", letters_path({:status=>'new'}), :class => "visible"  %></li>
     	<li><%= link_to t(:home), letters_path, :class => "visible"  %></li>
     </ul>
     
