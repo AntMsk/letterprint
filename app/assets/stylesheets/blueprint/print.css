@@ -47,11 +47,18 @@ a:link:after, a:visited:after {content:" (" attr(href) ")";font-size:90%;}
 
   @page:left {margin-left:0cm; margin-right:0cm;}
   @page:right {margin-left:0cm; margin-right:0cm;}
+  
+  .page
+    {
+     -webkit-transform: rotate(-90deg); -moz-transform:rotate(-90deg);
+     filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    }
+
   /*@page:top {margin-top:0cm; margin-bottom:0cm;}
   @page:bottom {margin-top:0cm; margin-bottom:0cm;}
   */
 
-
+body{  }
 
 header, footer, a , h1, .noprint, .flash 
 {
@@ -99,5 +106,13 @@ header, footer, a , h1, .noprint, .flash
 .endpage
 {
 	page-break-after:always;
+}
+.counter
+{
+	position: absolute;
+	top:1cm;
+	left:1cm;
+	font-size:0.8cm;
+	
 }
 HR {page-break-after:always;}
